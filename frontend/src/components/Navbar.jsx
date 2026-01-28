@@ -1,5 +1,5 @@
 import { useAuthStore } from "../store/useAuthStore";
-import { Baby, Cog, DoorOpen, MessageCircle } from "lucide-react";
+import { Baby, Cog, DoorOpen, MessageCircle, UsersRound } from "lucide-react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const Navbar = () => {
@@ -45,6 +45,35 @@ const Navbar = () => {
           {authUser && (
             <nav className="flex items-center gap-2">
               <Link
+                to="/"
+                className={`
+                  relative flex items-center gap-2 px-3 sm:px-4 py-2.5 rounded-xl
+                  transition-all duration-200 group overflow-hidden
+                  ${
+                    isActive("/")
+                      ? "bg-base-200 text-base-content"
+                      : "text-base-content/70 hover:text-base-content hover:bg-base-200"
+                  }
+                `}
+              >
+                {!isActive("/") && (
+                  <span className="absolute inset-0 bg-gradient-to-r from-secondary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                )}
+
+                <UsersRound
+                  className="size-6 group-hover:scale-110 transition-transform duration-200 relative z-10"
+                  strokeWidth={2}
+                />
+                <span className="hidden sm:inline text-sm font-medium relative z-10">
+                  Chats
+                </span>
+
+                {isActive("/") && (
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary-content rounded-full"></span>
+                )}
+              </Link>
+
+              <Link
                 to="/profile"
                 className={`
                   relative flex items-center gap-2 px-3 sm:px-4 py-2.5 rounded-xl
@@ -72,7 +101,7 @@ const Navbar = () => {
                   <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary-content rounded-full"></span>
                 )}
               </Link>
-              
+
               <Link
                 to="/settings"
                 className={`
