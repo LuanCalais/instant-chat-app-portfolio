@@ -48,7 +48,7 @@ const Settings = () => {
 
   return (
     <div className="min-h-screen bg-base-200 pt-20">
-      <div className="container mx-auto px-4 py-8 max-w-4xl">
+      <div className="container mx-auto px-4 py-8 max-w-6xl">
         <div className="mb-8">
           <h1 className="text-3xl font-semibold text-base-content mb-2">
             Settings
