@@ -138,7 +138,7 @@ const UserItem = ({ user, isSelected, isOnline, onClick }) => {
             <div className="absolute inset-0 bg-gradient-to-r from-success to-primary rounded-full opacity-20 group-hover:opacity-40 blur-sm transition-opacity"></div>
           )}
           <img
-            src={user.profilePic || "/avatar.png"}
+            src={user.profilePicture || "/avatar.png"}
             alt={user.fullName}
             className={`size-12 object-cover rounded-full relative z-10 ${
               isOnline ? "ring-2 ring-success ring-offset-2 ring-offset-base-100" : "opacity-70"
