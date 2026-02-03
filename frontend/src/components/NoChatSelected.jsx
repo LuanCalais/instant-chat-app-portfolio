@@ -1,4 +1,4 @@
-import { MessageCircle, Sparkles, ArrowLeft } from "lucide-react";
+import { MessageCircle, Sparkles, ArrowLeft, MessageCircleCode } from "lucide-react";
 
 const NoChatSelected = () => {
   return (
@@ -16,7 +16,7 @@ const NoChatSelected = () => {
             
             <div className="relative w-24 h-24 rounded-2xl bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 flex items-center justify-center backdrop-blur-sm border border-primary/20 shadow-2xl animate-float">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-2xl"></div>
-              <MessageCircle className="w-12 h-12 text-primary relative z-10" />
+              <MessageCircleCode className="w-12 h-12 text-primary relative z-10" />
               
               <Sparkles className="absolute -top-2 -right-2 w-6 h-6 text-accent animate-ping" />
               <Sparkles className="absolute -bottom-1 -left-1 w-4 h-4 text-secondary animate-pulse [animation-delay:0.5s]" />

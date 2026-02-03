@@ -1,5 +1,5 @@
 import { useAuthStore } from "../store/useAuthStore";
-import { Baby, Cog, DoorOpen, MessageCircle, UsersRound } from "lucide-react";
+import { Baby, Cog, DoorOpen, MessageCircleCode, UsersRound } from "lucide-react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const Navbar = () => {
@@ -25,9 +25,9 @@ const Navbar = () => {
           <Link to="/" className="flex items-center gap-3 group">
             <div className="relative">
               <div className="size-10 rounded-xl bg-primary flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-primary/50">
-                <MessageCircle
+                <MessageCircleCode
                   className="size-5 text-primary-content"
-                  strokeWidth={2.5}
+                  strokeWidth={2}
                 />
               </div>
               <div className="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full border-2 border-base-100 animate-pulse"></div>

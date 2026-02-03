@@ -5,7 +5,7 @@ import {
   Loader2,
   Lock,
   Mail,
-  MessageCircle,
+  MessageCircleCode,
   User,
 } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
@@ -60,7 +60,7 @@ const Signup = () => {
           <div className="text-center mb-8">
             <div className="flex flex-col items-center gap-4 group">
               <div className="size-16 flex items-center justify-center group-hover:scale-105 transition-transform duration-200">
-                <MessageCircle className="text-white" size={28} color="#000" />
+                <MessageCircleCode className="text-white" size={58} color="#000" />
               </div>
               <div className="space-y-2">
                 <h1 className="text-3xl font-semibold text-[#1A1A1A] tracking-tight">
