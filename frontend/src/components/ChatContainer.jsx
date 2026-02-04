@@ -3,29 +3,43 @@ import { useChatStore } from "../store/useChatStore";
 import ChatHeader from "./ChatHeader";
 import MessageInput from "./MessageInput";
 import ChatMessagesSqueleton from "./skeletons/ChatMessagesSqueleton";
+import ChatContent from "./ChatContent";
 
 const ChatContainer = () => {
-  const { messages, getMessages, isMessagesLoading, selectedUser } =
-    useChatStore();
-
-  console.log(messages);
+  const {
+    isMessagesLoading,
+    selectedUser,
+    subscribeToMessages,
+    unsubscribeToMessages,
+    getMessages,
+  } = useChatStore();
 
   useEffect(() => {
-    getMessages(selectedUser._id);
-  }, [getMessages, selectedUser._id]);
+    subscribeToMessages();
+    if (selectedUser?._id) {
+      getMessages(selectedUser._id);
+    }
+    return () => unsubscribeToMessages();
+  }, [
+    selectedUser._id,
+    getMessages,
+    subscribeToMessages,
+    unsubscribeToMessages,
+  ]);
 
-  if (isMessagesLoading) return (
-    <div className="flex-1 flex flex-col overflow-auto">
-      <ChatHeader />
-      <ChatMessagesSqueleton />
-      <MessageInput />
-    </div>
-  )
+  if (isMessagesLoading)
+    return (
+      <div className="flex-1 flex flex-col overflow-auto">
+        <ChatHeader />
+        <ChatMessagesSqueleton />
+        <MessageInput />
+      </div>
+    );
 
   return (
     <div className="flex-1 flex flex-col overflow-auto">
       <ChatHeader />
-      <p>Messages...</p>
+      <ChatContent />
       <MessageInput />
     </div>
   );

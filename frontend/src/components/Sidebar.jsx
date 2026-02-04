@@ -14,12 +14,10 @@ const Sidebar = () => {
     getUsers();
   }, [getUsers]);
 
-  // Filter users based on search
   const filteredUsers = users.filter((user) =>
     user.fullName.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // Separate online and offline users
   const onlineUsersList = filteredUsers.filter((user) =>
     onlineUsers.includes(user._id)
   );

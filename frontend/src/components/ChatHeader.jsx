@@ -49,7 +49,7 @@ const ChatHeader = () => {
                     isOnline ? "text-success" : "text-base-content/50"
                   }`}
                 >
-                  {isOnline ? "Active now" : "Offline"}
+                  {isOnline ? "Active" : "Offline"}
                 </span>
               </div>
             </div>
